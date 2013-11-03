@@ -7,7 +7,7 @@ import os
 home_dir = os.environ['HOME']
 
 # Change to the Workshop folder under it
-os.chdir(os.path.join(home_dir, 'Workshop'))
+os.chdir(os.path.join(home_dir, "projects", 'PythonWorkshop'))
 
 os.getcwd() # Print where we are, just to be sure
 
