@@ -9,6 +9,8 @@
 	b. Edit window, python shell window
 	
 	c. Syntax coloring
+
+	d. Indention and meaning
  
 0.  tell them about modules; import os and show them `os.getcwd()`, `os.chdir()`, `os.path.join()`, and `os.environ[]`
  
