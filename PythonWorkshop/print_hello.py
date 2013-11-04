@@ -25,8 +25,10 @@ data_file.close()
 
 # Print a header...
 print "These are the lines from %s\n" % filename
+
+# ...look what multiplication does to a string...
 print "=" * 34
-# ...and the data
+# ...and then print the data
 print "%s" % data
 print "=" * 34
 

@@ -17,9 +17,15 @@
 `os.path.join()`, and `os.environ[]`, using the file `print_hello.py`
  
 0.  Objects (file object, string object) and methods, using the
-file `read_hello.py` and the file object and `f.readlines()` method.
+file `read_file.py` and the file object and `f.readlines()` method.
+
+0.  Opening a text file and reading with `readlines()`,
+and with `for l in f:`.
 
 0.  Being neat....  If you `open()` a file, you should `close()` a file
+
+0.  How to read a `.csv` file using `read_csv.py` (note that rows
+come out as lists).
  
 0.  how to write a `try: ... exception:` block, using the file `except1.py`
 
@@ -65,8 +71,4 @@ file `read_hello.py` and the file object and `f.readlines()` method.
 0.  show them a simple if statement
  
 0.  how to open a csv and a gzip file
- 
 
-
-0.  Opening a text file and reading with `f.readline()`, `readlines()`,
-and with `for l in f:`.

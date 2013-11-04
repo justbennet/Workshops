@@ -44,4 +44,5 @@ data_file = open(filename, 'r')
 # Use a list comprehension to read the data
 date = [ l.strip() for l in data_file ]
 
-# Exercise: rewrite the list comprehension as a for
+# Exercise: rewrite the list comprehension as a for to make sure you
+# understand it
