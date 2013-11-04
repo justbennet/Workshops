@@ -14,7 +14,7 @@ os.chdir(os.path.join(home_dir, "projects", 'PythonWorkshop'))
 os.getcwd() # Print where we are, just to be sure
 
 # Assign the name of our data file to a variable
-filename = '2012.csv'
+filename = '2011.csv'
 
 # Open the file
 data_file = open(filename, 'r')
@@ -29,9 +29,19 @@ for line in data_file:
 # Be tidy...
 data_file.close()
 
-# Print some data lines
+# Print some data lines... how many?  How does range() work?
 for i in range(0,11):
     print data[i]
 
 # print the last line
 print data[-1]
+
+# Another way to read the file...
+
+# Reopen the file
+data_file = open(filename, 'r')
+
+# Use a list comprehension to read the data
+date = [ l.strip() for l in data_file ]
+
+# Exercise: rewrite the list comprehension as a for
