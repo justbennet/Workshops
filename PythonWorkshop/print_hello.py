@@ -24,7 +24,10 @@ data = data_file.readlines()
 data_file.close()
 
 # Print a header...
-print "These are the lines from %s" % filename
+print "These are the lines from %s\n" % filename
 print "=" * 34
 # ...and the data
 print "%s" % data
+print "=" * 34
+
+print "\n\nWhy don't they look like lines?"
