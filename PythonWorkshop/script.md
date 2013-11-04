@@ -13,8 +13,8 @@
 
     d. Indention and meaning
  
-0.  Modules; import os and show them `os.getcwd()`,
-`os.chdir()`, `os.path.join()`, and `os.environ[]`, using the file `print_hello.py`
+0.  Modules; `import os` and show them `os.getcwd()`, `os.chdir()`,
+`os.path.join()`, and `os.environ[]`, using the file `print_hello.py`
  
 0.  Objects (file object, string object) and methods, using the
 file `read_hello.py` and the file object and `f.readlines()` method.
@@ -25,7 +25,7 @@ file `read_hello.py` and the file object and `f.readlines()` method.
 
 	a. What is an exception?
 
-	b. Basic structure:  `try:` ... `exception <type>` ... `default`
+	b. Basic structure:  `try:` ... `except <type>:` ... `except:`
 
 	c. Python is full, and I do mean full (look for it on the web), of niceness.
 	An example is how to open a file using
@@ -37,9 +37,17 @@ file `read_hello.py` and the file object and `f.readlines()` method.
 	(which is in `exception2.py`) The nice part of that is that the file is
 	closed automagically.
 
+0.  show them `for` loops using the file `read_file.py`
+
+    a. `for` with something that knows how to iterate (`for line in file:`)
+    
+    b. `for` with explicit limits using `range()`
+    
+    c. show a list comprehension; rewrite that as a `for` as an exercise
+ 
 0.  how to grab a file from a URL, using the file `read_url.py`
 
-	a. import `urllib2`
+	a. import `urllib`
 	
 	b. put the URL in a string
 	
@@ -49,13 +57,11 @@ file `read_hello.py` and the file object and `f.readlines()` method.
 	d. What did we get?  A really long string (99887 characters)
 	
 0.  tell them about lists and strings and show some methods, e.g.,
-`str.split()`, `str.trim()`, `str.join()`, using 
+`str.split()`, `str.trim()`, `str.join()`, using `read_url.py`
  
 0.  tell them about dictionaries and show an example of one
  
-0.  show them a simple list comprehension and explain its relationship
-to a for loop
- 
+
 0.  show them a simple if statement
  
 0.  how to open a csv and a gzip file

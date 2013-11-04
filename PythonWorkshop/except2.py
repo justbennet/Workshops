@@ -2,8 +2,18 @@
 
 import os
 
+# Make sure we're in the project directory
+home_dir = os.environ['HOME']
+work_dir = os.path.join(home_dir, 'projects', 'PythonWorkshop')
+try:
+    os.chdir(work_dir)
+    print "Changed to " + os.getcwd()
+except:
+    print work_dir + " doesn't seem to exist"
+
 data = []
 
+# An example of getting input from the command line using a while loop
 while True:
     try:
         file_name = raw_input("Please enter the name of the file to read:  ")
@@ -13,5 +23,5 @@ while True:
                 print line,
         break
     except IOError:
-        print "\nSorry.  I looked for that file and could not find it"
+        print "\nSorry.  I looked for that file and could not find it\n"
         print "Please try again\n"
