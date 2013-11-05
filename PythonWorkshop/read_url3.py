@@ -58,14 +58,22 @@ for month in range(1,13):
     else:
         for line in tmp[17:]:
             data.append(line)
+            
+### End for month...
+
+# As your programs get longer, you may want to use comments to indicate the
+# ends of loops or ifs because there isn't an explicit end in python, just a
+# change in indentation.
+
 # We've got all the data, let's do a sanity check...
+# Are the first lines in Jan?  The last lines in Dec?
 print "The variable names and the first five lines of data:\n"
 print data[0:6]
 print "\n\nand the last five lines of data:\n"
 print data[-5:]
 
-# We've collected all the data, so we write it out to the file
-data_file = str(year) + '-weather.csv'
+# We've collected all the data, so now we write it out to the file, 2011.csv
+data_file = str(year) + '.csv'
 print "Writing to " + data_file
 try:
     with open(data_file, 'w') as f:

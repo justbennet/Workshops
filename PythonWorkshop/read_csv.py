@@ -15,13 +15,16 @@ except:
 # Initialize the data list
 data = []
 
-# open our data file
+# Reading a .csv file is done with an open file handle, then a csv.reader()
+# translates the contents; it's not really a separate file reader
+
+# First, open our data file, which should have been created by read_url3.py
 data_file = open('2011.csv', 'r')
 
-# Set up the csv.reader()
+# Then set up the csv.reader()
 data_reader = csv.reader(data_file)
 
-# Now we have a csv.reader object, which acts like a file/list, so we read
+# Now we have a csv.reader object, which acts like a file/list, so we process
 # with a for loop
 for row in data_reader:
     data.append(row)
@@ -47,3 +50,4 @@ for row in range(0:5):
 for i in range(1,5):
     print ("Date is %s and temperature is %s degrees C, %4.2f degrees F" %
        (data[i][0], data[i][6], 9*float(data[i][6])/5 + 32))
+

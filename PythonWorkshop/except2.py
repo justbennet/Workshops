@@ -25,3 +25,7 @@ while True:
     except IOError:
         print "\nSorry.  I looked for that file and could not find it\n"
         print "Please try again\n"
+    except KeyboardInterrupt:
+        print "\n\nOK, OK!  I quit..."
+        break
+        

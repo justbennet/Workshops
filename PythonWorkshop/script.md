@@ -13,6 +13,8 @@
 
     d. Indention and meaning
  
+	e. If the python shell prompt doesn't come back, it's still working.
+		
 0.  Modules; `import os` and show them `os.getcwd()`, `os.chdir()`,
 `os.path.join()`, and `os.environ[]`, using the file `print_hello.py`
  
@@ -60,10 +62,7 @@ come out as lists).
 	c. the URL is treated much like a file, it has an `open()` method, and a
 	`read()` method
 	
-	d. Danger, Will Robinson... if the python shell prompt doesn't come back, it's
-	still working.
-		
-	e. What did we get?  A really long string (99887 characters)
+	d. What did we get?  A really long string (99887 characters)
 	
 0.  tell them about lists and strings and show some methods, e.g.,
 `str.split()`, `str.trim()`, `str.join()`, using `read_url.py`
