@@ -60,7 +60,10 @@ come out as lists).
 	c. the URL is treated much like a file, it has an `open()` method, and a
 	`read()` method
 	
-	d. What did we get?  A really long string (99887 characters)
+	d. Danger, Will Robinson... if the python shell prompt doesn't come back, it's
+	still working.
+		
+	e. What did we get?  A really long string (99887 characters)
 	
 0.  tell them about lists and strings and show some methods, e.g.,
 `str.split()`, `str.trim()`, `str.join()`, using `read_url.py`
