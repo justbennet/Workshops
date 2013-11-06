@@ -1,5 +1,16 @@
 # -*- coding: utf-8 -*-
+import os
 import pandas as pd
+
+# Make sure we're in the project directory
+
+home_dir = os.path.expanduser('~')
+work_dir = os.path.join(home_dir, 'projects', 'PythonWorkshop')
+try:
+    os.chdir(work_dir)
+    print "Changed to " + os.getcwd()
+except:
+    print work_dir + " doesn't seem to exist"
 
 # Read the data, csv, we have some accented characters
 bike_data = pd.read_csv("./bike_data.csv", encoding='latin1', sep=';',
@@ -22,7 +33,7 @@ print bike_data.head(n=10)
 # Note the u'..' for the string with the accented character
 print bike_data[['Berri 1', u'Côte-Sainte-Catherine', 'Maisonneuve 1']].head()
 
-# Sometimes the default presentaion works...
+# Sometimes the default presentation works...
 bike_data[['Berri 1', u'Côte-Sainte-Catherine', 'Maisonneuve 1']].head()
 
 
@@ -54,3 +65,15 @@ bike_data.plot()
 
 # Let's plot just two locations
 bike_data[['Berri 1', 'Maisonneuve 2']].plot()
+
+# Read in the bike_weather data
+weather_data = pd.read_csv('./bike_weather.csv', index_col='Date/Time', parse_dates=True)
+
+# Only keep the columns we might actually use
+weather_data = weather_data[['Temp (C)', 'Dew Point Temp (C)', 'Rel Hum (%)','Wind Spd (km/h)', 'Visibility (km)', 'Weather']]
+
+# Create a new frame...?
+bike_data['Mean Temp'] = weather_data['Temp (C)'].resample('D', how='mean')
+
+# Plot the traffic at Berri 1 and Mean Temp one above the other
+bike_data[['Berri 1', 'Mean Temp']].plot(subplots=True)
