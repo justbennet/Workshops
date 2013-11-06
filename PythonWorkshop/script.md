@@ -5,24 +5,43 @@
 0.  Opening Canopy and a little bit about how to move around, using the file
 	`print_hello.py`
 
-    a. Editor, Package manager
+    a. What are the Editor, Package manager
     
     b. Edit window, python shell window
     
-    c. Syntax coloring
+    c. Syntax coloring, and why it can be a help
 
-    d. Indention and meaning
+    d. Indention and meaning in python, automatic in the editor and the shell
  
 	e. If the python shell prompt doesn't come back, it's still working.
 		
-0.  Modules; `import os` and show them `os.getcwd()`, `os.chdir()`,
-`os.path.join()`, and `os.environ[]`, using the file `print_hello.py`
+0.  Modules, using the file `print_hello.py`
+	a. `import os` and show them `os.getcwd()`, `os.chdir()`, `os.path.join()`,
+	and `os.path.expanduser()`
+	
+	b. Typing `os.getcwd()` just prints it, whereas `pwd = os.getcwd()` saves
+	the value into `pwd`
  
-0.  Objects (file object, string object) and methods, using the
-file `read_file.py` and the file object and `f.readlines()` method.
+0.  Objects and methods, using the file `read_file.py`
 
-0.  Opening a text file and reading with `readlines()`,
-and with `for l in f:`.
+	a. The file object, `f`
+	
+	b. The `readlines()` method
+
+0.  Iterable objects and `for` loop, using the file `read_file.py`
+
+	a. `for l in f:`
+	
+	b. Note the colon and the indentation change
+	
+	c. Lists are iterable, cf the `data` list, and so are strings
+	
+	d. indexing of lists, strings, etc.  What is `data[0]`?  `data[1]`?
+	`data[-1]`?
+	
+	e. slices of lists and things, as in `data[-5:]` and `data[1:6]`
+	
+	f. `len(data)` and `len(data[0])`
 
 0.  Being neat....  If you `open()` a file, you should `close()` a file
 
@@ -67,10 +86,7 @@ come out as lists).
 0.  tell them about lists and strings and show some methods, e.g.,
 `str.split()`, `str.trim()`, `str.join()`, using `read_url.py`
  
+0.  show them a simple if statement using `url_read3.p`
+ 
 0.  tell them about dictionaries and show an example of one
- 
-
-0.  show them a simple if statement
- 
-0.  how to open a csv and a gzip file
 
