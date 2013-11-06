@@ -2,7 +2,7 @@ import os
 import re
 
 # Get to our work directory
-home_dir = os.environ['HOME']
+home_dir = os.path.expanduser('~')
 work_dir = os.path.join(home_dir, 'projects', 'PythonWorkshop')
 try:
     os.chdir(work_dir)
