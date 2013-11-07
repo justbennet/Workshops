@@ -88,6 +88,9 @@ with open(file_name) as f:
                 usage[feature] = 1
             except:
                 print "WTF...?"
+            # Another way to do the above without an exception handler
+            # if usage.has_key( feature ): usage[feature] += 1
+            # else: usage[feature] = 1
         else:
             # Set p to something that will raise an error if it sneaks through
             p = ''
