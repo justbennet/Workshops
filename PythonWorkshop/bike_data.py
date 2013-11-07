@@ -48,23 +48,26 @@ import matplotlib.pyplot as plt
 
 # Just plot the data against the date index
 bike_data.plot()
+
 # You probably want to save some figures.  The savefig() method knows which
 # graphics format to use based on the extension you give it
 
 # Save it as a .png (raster) file
-plt.savefig("bike_data.png")
+plt.savefig("bike_data1.png")
 
 # Save it as .eps (vector) file
-plt.savefig("bike_data.eps")
+plt.savefig("bike_data1.eps")
 
 # Let's change the figure size to the legend doesn't obscure the lines
 plt.rcParams['figure.figsize'] = (17, 7)
 
 # Any better?
 bike_data.plot()
+plt.savefig('bike_data2.png')
 
 # Let's plot just two locations
 bike_data[['Berri 1', 'Maisonneuve 2']].plot()
+plt.savefig('berri_maisonneuve.png')
 
 # Read in the bike_weather data
 weather_data = pd.read_csv('./bike_weather.csv', index_col='Date/Time', parse_dates=True)
@@ -77,3 +80,4 @@ bike_data['Mean Temp'] = weather_data['Temp (C)'].resample('D', how='mean')
 
 # Plot the traffic at Berri 1 and Mean Temp one above the other
 bike_data[['Berri 1', 'Mean Temp']].plot(subplots=True)
+plt.savefig('berri_and_temp.png')

@@ -19,7 +19,7 @@ data = []
 # translates the contents; it's not really a separate file reader
 
 # First, open our data file, which should have been created by read_url3.py
-data_file = open('2011.csv', 'r')
+data_file = open('bike_weather.csv', 'r')
 
 # Then set up the csv.reader()
 data_reader = csv.reader(data_file)
@@ -30,13 +30,17 @@ for row in data_reader:
     data.append(row)
 
 # What do the first rows look like
-print "The first 4 rows of data"
+print "\nThe first 4 rows of data\n"
 print data[0:5]
-
+print "\n\n"
 # That was very hard to read, but note, each row is a list.  Easier to see
 # if you
-for row in range(0:5):
+
+print "\nPrinting each row individually\n"
+for row in range(0,5):
     print data[row]
+    print "\n"
+print "\n\n"
 
 # Finally, we add a second index (position indicator) to get specific
 # values off each row.  Here, we get the first four rows of data, each
@@ -49,5 +53,22 @@ for row in range(0:5):
 
 for i in range(1,5):
     print ("Date is %s and temperature is %s degrees C, %4.2f degrees F" %
-       (data[i][0], data[i][6], 9*float(data[i][6])/5 + 32))
+       (data[i][0], data[i][6], 9 * float(data[i][6])/5 + 32))
 
+# Create a new data set that contains just the Date/Time, Temp (C),
+# Wind Spd (km/h), and Weather.
+
+# We'll need a new, empty list
+n = []
+
+# We need to read each line, the create a new list with just the elements
+# from the old we want.  Uncomment and complete the code below so it does
+# that.
+
+# for line in data:
+#     subset = ...
+#     n.append(subset)
+#
+# print "\nFirst few rows of the subset\n"
+# for row in range(0,5):
+#     print n[row]

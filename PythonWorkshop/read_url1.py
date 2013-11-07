@@ -27,7 +27,8 @@ data = download.read()
 #  Now use iPython's ? to see what data is
 ######
 
-# We can split that one long string into lines 
+# We can split that one long string with embedded newline characters into
+# real lines 
 data = data.splitlines()
 
 #######
@@ -35,12 +36,13 @@ data = data.splitlines()
 #  See where the headers/data begin
 #######
 
-output_file = './2012-11-weather.csv'
+output_file = './url1.csv'
 # Let's use our tidy way to open files and handle exceptions
 try:
     with  open(output_file, 'w') as output_file:
-        # Now you know where the boundaries are, write the data to a .csv file
+        # Now you know where the boundaries are, fill those into the empty
+        # slice below, and write the data to a .csv file
         for l in data[:]:
             output_file.write(l + '\n')
 except IOError:
-    print "ERROR: " + output_file + " doesn't seem to exist."
+    print "ERROR: " + output_file + " doesn't seem to be creatable."

@@ -59,11 +59,7 @@ for month in range(1,13):
         for line in tmp[17:]:
             data.append(line)
             
-### End for month...
-
-# As your programs get longer, you may want to use comments to indicate the
-# ends of loops or ifs because there isn't an explicit end in python, just a
-# change in indentation.
+### End for loop through the months
 
 # We've got all the data, let's do a sanity check...
 # Are the first lines in Jan?  The last lines in Dec?
