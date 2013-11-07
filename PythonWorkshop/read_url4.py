@@ -35,6 +35,7 @@ for month in range(1,13):
         url = (site + "/climateData/bulkdata_e.html?format=csv&stationID=5415&Year="
         + str(year-1) + "&Month=" + str(month)
         + "&Day=14&timeframe=1&submit=Download+Data")
+    # Rewrite the if statement above so it's easier to read and understand
     # We use a try to download to catch errors
     try:
         # Create the connector to the site

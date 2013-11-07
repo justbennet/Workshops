@@ -33,7 +33,7 @@ print bike_data.head(n=10)
 # Note the u'..' for the string with the accented character
 print bike_data[['Berri 1', u'Côte-Sainte-Catherine', 'Maisonneuve 1']].head()
 
-# Sometimes the default presentation works...
+# Sometimes the default presentation works and is arguably nicer looking...
 bike_data[['Berri 1', u'Côte-Sainte-Catherine', 'Maisonneuve 1']].head()
 
 

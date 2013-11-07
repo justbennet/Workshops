@@ -17,6 +17,13 @@ file_name = 'sample.log'
 
 #####  Define some re patterns here
 
+# A nice guide to the symbolic patterns is at
+# http://docs.python.org/2/howto/regex.html
+# and can be browsed to in the Canopy Doc Browser,
+# Python Documentation -> Python HOWTOs
+#  -> Regular Expression HOWTO
+# in the section on Simple Patterns
+
 # Example of a TIMESTAMP line
 # 14:30:26 (MLM) TIMESTAMP 6/30/2013
 # \d = number; \w = word; + = one or more; TIMESTAMP is literal

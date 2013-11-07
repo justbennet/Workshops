@@ -28,7 +28,7 @@ data = download.read()
 ######
 
 # We can split that one long string with embedded newline characters into
-# real lines 
+# real lines.  Note:  it strips the EOL character!
 data = data.splitlines()
 
 #######
