@@ -32,7 +32,7 @@ timestamp = re.compile(r'(\d{2}:\d{2}:\d{2}) \(\w+\) TIMESTAMP (\d+/\d+/\d+)')
 # timestamp.group(2) is the date
 
 # Example of a feature checkout line
-# 23:09:58 (MLM) OUT: "MATLAB" tianfeng@flux-login2.engin.umich.edu  
+# 23:09:58 (MLM) OUT: "MATLAB" aquaman@monster.data.umich.edu  
 #  NOTE:  There were actually a couple of spaces at the end of the line, so it
 #  wasn't matching when the $ terminator was in the re pattern.  Warn people
 #  of the dangers of invisibles!
