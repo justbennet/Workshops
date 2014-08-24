@@ -23,3 +23,6 @@ line = '23:09:58 (MLM) OUT: "MATLAB" aquaman@monster.data.umich.edu  '
 p = mlm_feature.match(line)
 # See definition of mlm_feature RE for what the elements are
 data.append([ p.group(i) for i in range(1,6) ])
+
+print data
+

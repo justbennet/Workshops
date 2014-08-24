@@ -111,3 +111,4 @@ for i in range(0,5):
 print "\n\nPrinting usages for each feature\n" + "="*32 + '\n'
 for key in sort(usage.keys()):
     print "Feature %-25s:  %d" % (key, usage[key])
+print "\n\n"
