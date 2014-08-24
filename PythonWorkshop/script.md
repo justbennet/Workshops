@@ -32,7 +32,7 @@
 	
 	f. The `readlines()` method -- expand on what is an object and a method
 
-	g. `print` and `print "%s" & x` -- translates number into string:
+	g. `print` and `print "%s" % x` -- translates number into string:
 	demonstrate.
 	
 	h. Strings and multiplication `"=" * 32`
