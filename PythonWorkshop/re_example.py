@@ -45,7 +45,7 @@ mlm_feature = re.compile('(\d{2}:\d{2}:\d{2}) \(MLM\) (\w+): \"(\S+)\" (\w+)@(\S
 # mlm_feature(5) is the hostname
 
 # Example of a startup line
-# 16:55:04 (lmgrd) FLEXnet Licensing (v11.9.0.0 build 87342 x64_lsb) started on flux-license1.engin.umich.edu (linux) (6/3/2013)
+# 16:55:04 (lmgrd) FLEXnet Licensing (v11.9.0.0 build 87342 x64_lsb) started on checkout.data.umich.edu (linux) (6/3/2013)
 lmgrd_start = re.compile('(\d{2}:\d{2}:\d{2}) \(lmgrd\) .* \(linux\) \((\d+/\d+/\d+)\)')
 # lmgrd_start.group(1) is start time
 # lmgrd_start.group(2) is start date
@@ -89,23 +89,35 @@ with open(file_name) as f:
                 # print ( "Checked out %s on %s at %s to %s" %
                 #    (feature, date, time, user))
                 data.append([date, time, feature, user, host])
-            try:
-                usage[feature] += 1
-            except KeyError:
-                usage[feature] = 1
-            except:
-                print "WTF...?"
-            # Another way to do the above without an exception handler
-            # if usage.has_key( feature ): usage[feature] += 1
-            # else: usage[feature] = 1
-        else:
-            # Set p to something that will raise an error if it sneaks through
-            p = ''
-            pass
+                try:
+                    usage[feature] += 1
+                except KeyError:
+                    usage[feature] = 1
+                except:
+                    print "WTF from trying an OUT record...?"
+                # Another way to do the above without an exception handler
+                # if usage.has_key( feature ): usage[feature] += 1
+                # else: usage[feature] = 1
+            elif p.group(2) == 'IN':
+                # print ( "Checked in %s on %s at %s to %s" %
+                #    (feature, date, time, user))
+                data.append([date, time, feature, user, host])
+                try:
+                    usage[feature] -= 1
+                except KeyError:
+                    usage[feature] = 0
+                    print "Just set", feature, "to 0 instead of negative"
+                except:
+                    print "WTF from trying an IN record...?"
+            else:
+                # Set p to something that will raise an error if it sneaks through
+                p = ''
+                pass
+            print data[-1][0], data[-1][1], data[-1][2], "current usage is", usage[feature]
 print "%-25s %s %s" % ("Data ends at", date, time)
 
 print "\n\nHere are the first few lines of data\n"
-for i in range(0,5):
+for i in range(0,20):
     print data[i]
 
 print "\n\nPrinting usages for each feature\n" + "="*32 + '\n'
