@@ -13,7 +13,7 @@ except:
     print work_dir + " doesn't seem to exist"
 
 # Where our data can be found
-file_name = 'sample.log'
+file_name = 'matlab.2017-01-08_17:17:45.log'
 
 #####  Define some re patterns here
 
@@ -23,6 +23,10 @@ file_name = 'sample.log'
 # Python Documentation -> Python HOWTOs
 #  -> Regular Expression HOWTO
 # in the section on Simple Patterns
+
+#  Regular expression fields are defined with paretheses and numbered sequentially.
+#  You can alternate patterns between captured fields and uncaptured text.  This
+#  example uses almost all captured fields.
 
 # Example of a TIMESTAMP line
 # 14:30:26 (MLM) TIMESTAMP 6/30/2013
@@ -36,6 +40,8 @@ timestamp = re.compile(r'(\d{2}:\d{2}:\d{2}) \(\w+\) TIMESTAMP (\d+/\d+/\d+)')
 #  NOTE:  There were actually a couple of spaces at the end of the line, so it
 #  wasn't matching when the $ terminator was in the re pattern.  Warn people
 #  of the dangers of invisibles!
+#  Also note the use of escaped parentheses to match text in the input.  In
+#  this case, that is part of uncaptured, literal text.
 #  mlm_feature = re.compile('(\d{2}:\d{2}:\d{2}) \(MLM\) (\w+): \"(\S+)\" (\w+)@(\S+)$')
 mlm_feature = re.compile('(\d{2}:\d{2}:\d{2}) \(MLM\) (\w+): \"(\S+)\" (\w+)@(\S+)')
 # mlm_feature(1) is the time
@@ -66,20 +72,7 @@ with open(file_name) as f:
         #
         # Have to put the start line in first to insure that date has a valid
         # value.  No features or timestamps will precede the start.
-        if lmgrd_start.match(line):
-            # We create a match object, and it has the bits that match
-            p = lmgrd_start.match(line)
-            # We pull them out and assign them to objects that will persist
-            date = p.group(2)
-            time = p.group(1)
-            print ( "\n\n%-25s %s %s"
-                    % ("License server started",date, time) )
-        elif timestamp.match(line):
-            p = timestamp.match(line)
-            time = p.group(1)
-            date = p.group(2)
-            # print "Date changed to: %s at %s" %( date, time)
-        elif mlm_feature.match(line):
+        if mlm_feature.match(line):
             p = mlm_feature.match(line)
             time = p.group(1)
             feature = p.group(3)
@@ -114,6 +107,19 @@ with open(file_name) as f:
                 p = ''
                 pass
             print data[-1][0], data[-1][1], data[-1][2], "current usage is", usage[feature]
+        elif timestamp.match(line):
+            p = timestamp.match(line)
+            time = p.group(1)
+            date = p.group(2)
+        elif lmgrd_start.match(line):
+            # We create a match object, and it has the bits that match
+            p = lmgrd_start.match(line)
+            # We pull them out and assign them to objects that will persist
+            date = p.group(2)
+            time = p.group(1)
+            print ( "\n\n%-25s %s %s"
+                    % ("License server started",date, time) )
+            # print "Date changed to: %s at %s" %( date, time)
 print "%-25s %s %s" % ("Data ends at", date, time)
 
 print "\n\nHere are the first few lines of data\n"
@@ -121,6 +127,7 @@ for i in range(0,20):
     print data[i]
 
 print "\n\nPrinting usages for each feature\n" + "="*32 + '\n'
+
 for key in sort(usage.keys()):
     print "Feature %-25s:  %d" % (key, usage[key])
 print "\n\n"
